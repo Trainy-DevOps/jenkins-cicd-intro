@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+    triggers {
+        pullSCM '*/5***'
+    }    
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Hello Africa'
+            }
+        }
+        stage('Delievery') {
+            steps {
+                echo 'Hello Ghana'
+                echo env.BUILD_URL
+            }
+        }        
+    }
+}
